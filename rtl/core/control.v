@@ -24,7 +24,7 @@
 
 
 module control (
-    input [6:0] OpCode,
+    input [6:0] OpCode, // change it to be 'instruction' rather than OpCode, then assign to the internal signal OpCode
     output reg Branch,
     output reg MemRead,
     output reg MemtoReg,
@@ -33,8 +33,9 @@ module control (
     output reg ALUSrc,
     output reg RegWrite
 );
-
-
+    // reg[6:0] OpCode ;
+    // assign OpCode = instruction[6:0] ; 
+    
 // concatinate related signal to one bus
 reg [7:0] ControlOutBus;
 assign {ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp} = ControlOutBus;
