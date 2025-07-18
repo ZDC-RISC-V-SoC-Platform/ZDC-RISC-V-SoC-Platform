@@ -6,7 +6,7 @@ module alu_control (
     output reg [3:0] alu_control_lines
 ) ;
 
-    flag_err = 1'b1 ;
+    flag_err = 1'b0 ;
 
     always @(*) begin 
         
